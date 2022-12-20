@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/Api_Go_Rest/database"
 	"github.com/Api_Go_Rest/routes"
 
 	"github.com/Api_Go_Rest/models"
@@ -10,9 +11,10 @@ import (
 
 func main() {
 	models.Personalidades = []models.Personalidade{
-		{Id: 1, Nome: "Mestre Irineu", Historia: "Raimundo Irineu Serra conheceu por meio de indígenas da região a bebida sagrada ayahuasca."},
+		{Id: 1, Nome: "Nome 1", Historia: "Historia 1"},
 		{Id: 2, Nome: "Nome 2", Historia: "Historia 2"},
 	}
-	fmt.Println("Iniciando o Go rest")
-	routes.HandleRequest()
+	database.ConectaComBancoDeDados()
+	fmt.Println("Iniciando o servidor Rest com Go")
+	routes.HandleResquest()
 }

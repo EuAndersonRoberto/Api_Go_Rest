@@ -7,14 +7,14 @@ services:
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=root      
     ports:
-      - "5433:5433"
+      - "5432:5432"
     volumes:
       - ./migration/docker-database-initial.sql:/docker-entrypoint-initdb.d/docker-database-initial.sql   
 
   pgadmin-compose:
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: "euandersondigital@gmail.com"
+      PGADMIN_DEFAULT_EMAIL: "euanderson.roberto@gmail.com"
       PGADMIN_DEFAULT_PASSWORD: "123123"
     ports:
       - "54321:80"
