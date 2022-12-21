@@ -15,7 +15,6 @@ func Home(w http.ResponseWriter, r *http.Request) {
 }
 
 func TodasPersonalidades(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-type", "application/json")
 	var p []models.Personalidade //"p" será uma lista onde contém todas as personalidades vindas do models.Personalidade.
 	database.DB.Find(&p)         //Aqui solicitamos ao database que em conexão com o banco de dados, encontre TODAS as personalidades utilizando o Find() para encontra-las, passamos o endereço de memória "&p", onde "p" é um slice de personalidades.
 	json.NewEncoder(w).Encode(p) //Aqui solicitamos a visualização do slice de "p" para o json.
